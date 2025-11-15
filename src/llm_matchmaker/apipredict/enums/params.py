@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import Enum, IntEnum
 
 class TaskType(str, Enum):
     GENERATION = "generation"
@@ -36,9 +36,9 @@ class HallucinationTolerance(str, Enum):
     MEDIUM = "medium"
     LOW = "low"
 
-class DeterminismNeeded(str, Enum):
-    HIGH = "high"
-    LOW = "low"
+class DeterminismNeeded(IntEnum):
+    HIGH = 1
+    LOW = 0
 
 class TemperaturePreference(str, Enum):
     LOW = "low"

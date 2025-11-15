@@ -9,6 +9,5 @@ class LLMs(Enum):
     GPT_4O = "GPT-4o"
 
 class ModelResult(BaseModel):
-    probability: float
     prediction: LLMs
 
