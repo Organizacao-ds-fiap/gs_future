@@ -99,6 +99,6 @@ disp.plot(cmap="Blues")
 import joblib
 
 # %%
-best_model_filename = "best_llm_matchmaker_model.joblib"
-joblib.dump(best_model, best_model_filename)
-print(f"Best model saved to {best_model_filename}")
+best_model_filepath = "models/best_llm_matchmaker_model.joblib"
+joblib.dump(best_model, best_model_filepath)
+print(f"Best model saved to {best_model_filepath}")
