@@ -1,0 +1,14 @@
+services:
+    api-predict:
+      build: 
+        context: ./src/llm_matchmaker/apipredict
+        dockerfile: Dockerfile-api
+      container_name: api-predict
+      ports:
+        - "8080:80"
+      networks:
+        - app_network
+  
+networks:
+  app_network:
+    driver: bridge
