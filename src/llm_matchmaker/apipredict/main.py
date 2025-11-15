@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="Spero AI API",
+    title="LLM Matchmaker API",
     docs_url="/docs",  # URL para disponibilização do Swagger UI
     lifespan=lifespan
 )
