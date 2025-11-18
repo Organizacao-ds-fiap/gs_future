@@ -77,6 +77,67 @@ Saída
 
 best_model (classe predita)
 
-score de confiança
 
-justificativa explicável (via endpoint /explain)
+## Dependências
+
+- **Docker**
+- **uv** (gerenciador de ambiente e execução Python)
+- **Cliente MCP** (ex.: Claude Desktop)
+
+---
+
+## Como executar
+
+1. **Subir containers**
+   ```bash
+        docker-compose up -d
+    ``` 
+2. **Verificar container ativo**
+   ```bash
+        docker ps
+    ```
+
+
+3. **Entrar no diretorio do server**
+   ```bash
+        cd src\mcp_server
+    ``` 
+
+4. **Atualizar dependencias uv**
+   ```bash
+        uv sync
+    ``` 
+
+4. **Iniciar MCP Server**
+   ```bash
+        uv run matchmaker_server.py
+    ``` 
+
+## Configurar MCP CLient: Claude
+
+1. **Localizar arquivo de configuração (Windows)**
+   ```makefile
+        C:\Users\<USERNAME>\AppData\Roaming\Claude\claude_desktop_config.json
+    ``` 
+
+
+2. **Inserir configuração de MCP Server**
+    ``` json
+        {
+            "mcpServers": {
+                "matchmaker": {
+                    # path to uv
+                    "command": "C:/Users/<USERNAME>/.local/bin/uv.exe",
+                    "args": [
+                        "run",
+                        "--with",
+                        "mcp[cli]",
+                        "--with",
+                        "requests",
+                        %# Absolute path to file 
+                        "C:/Users/USENAME/Desktop/gs_future/src/mcp_server/matchmaker_server.py"
+                    ]
+                }
+            }
+        }
+    ``` 
