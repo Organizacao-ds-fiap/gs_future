@@ -1,4 +1,7 @@
 # LLM Matchmaker — Recomendador Inteligente de Modelos de Linguagem
+Uma Prova de Conceito (PoC) demonstrando um sistema inteligente capaz de recomendar o modelo de linguagem mais adequado para uma tarefa específica, considerando contexto e restrições do usuário.
+
+- Para professor avaliador: dataset em `data/llm_matchmaker_dataset_1000.csv` e ipynb de treinamento em `src/model_train/classifier_train.ipynb`
 
 ## 📌 1. Problema
 
